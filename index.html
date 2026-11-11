@@ -1,0 +1,380 @@
+<!--Created by Alexander Pen
+this is the html file for the website-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Aim Trainer</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  
+  <!-- Menu -->
+  <div id="menu">
+    <h1>3D Aim Trainer</h1>
+    <button id="libraryBtn">Training Library</button>
+    <button id="settingsBtn">Settings</button>
+    <button id="profileBtn">Profile</button>
+    <button id="statsBtn">Stats</button>
+    <button id="helpBtn">Information and Help</button>
+    <button id="signUpBtn">Sign up</button>
+  </div>
+
+  <!-- Stats Menu -->
+
+  <div id="statsMenu">
+    <div id="closeStats" class="closeDiv">
+      <h1> Stats </h1>
+      <button id="closeStatsBtn" class="closeBtn">←</button>
+    </div>
+
+    <div id="statsOptions">
+      <div id="accuracyModeStats" class="modeStats">
+        <h2>Accuracy Mode</h2>
+        <div id="staticAccuracyStats" class="subModeStats">
+          <h3>Static Mode</h3>
+          <button id="staticEasyStatsBtn" data-mode-stats="staticEasy">Static Easy</button>
+          <button id="staticMediumStatsBtn" data-mode-stats="staticMedium">Static Medium</button>
+          <button id="staticHardStatsBtn" data-mode-stats="staticHard">Static Hard</button>
+        </div>
+
+        <div id="dynamicAccuracyStats" class="subModeStats">
+          <h3>Dynamic Mode</h3>
+          <button id="dynamicEasyStatsBtn" data-mode-stats="dynamicEasy">Dynamic Easy</button>
+          <button id="dynamicMediumStatsBtn" data-mode-stats="dynamicMedium">Dynamic Medium</button>
+          <button id="dynamicHardStatsBtn" data-mode-stats="dynamicHard">Dynamic Hard</button>
+        </div>
+
+        <div id="curvedDynamicAccuracyStats" class="subModeStats">
+          <h3>Curved Dynamic Mode</h3>
+          <button id="curvedDynamicEasyStatsBtn" data-mode-stats="curvedDynamicEasy">Curved Dynamic Easy</button>
+          <button id="curvedDynamicMediumStatsBtn" data-mode-stats="curvedDynamicMedium">Curved Dynamic Medium</button>
+          <button id="curvedDynamicHardStatsBtn" data-mode-stats="curvedDynamicHard">Curved Dynamic Hard</button>
+        </div>
+      </div>
+
+      <div id="flickingModeStats" class="modeStats">
+        <h2>Flicking Mode</h2>
+        <button id="flickingEasyStatsBtn" data-mode-stats="flickingEasy">Flicking Easy</button>
+        <button id="flickingMediumStatsBtn" data-mode-stats="flickingMedium">Flicking Medium</button>
+        <button id="flickingHardStatsBtn" data-mode-stats="flickingHard">Flicking Hard</button>
+      </div>
+
+      <div id="trackingModeStats" class="modeStats">
+        <h2>Tracking Mode</h2>
+        <div id="singularTrackingStats" class="subModeStats">
+          <h3>Singular Target</h3>
+          <button id="singularTrackingEasyStatsBtn" data-mode-stats="singularTrackingEasy">Singular Tracking Easy</button>
+          <button id="singularTrackingMediumStatsBtn" data-mode-stats="singularTrackingMedium">Singular Tracking Medium</button>
+          <button id="singularTrackingHardStatsBtn" data-mode-stats="singularTrackingHard">Singular Tracking Hard</button>
+        </div>
+
+        <div id="multipleTrackingStats" class="subModeStats">
+          <h3>Multiple Target</h3>
+          <button id="multipleTrackingEasyStatsBtn" data-mode-stats="multipleTrackingEasy">Multiple Tracking Easy</button>
+          <button id="multipleTrackingMediumStatsBtn" data-mode-stats="multipleTrackingMedium">Multiple Tracking Medium</button>
+          <button id="multipleTrackingHardStatsBtn" data-mode-stats="multipleTrackingHard">Multiple Tracking Hard</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Display menu -->
+
+  <div id="statsDisplayMenu">
+    <div id="closeStatsDisplay" class="closeDiv">
+      <h1> Stats Display </h1>
+      <button id="closeStatsDisplayBtn" class="closeBtn">←</button>
+    </div>
+
+    <div id="statsDisplayOptions">
+      <h2 id="statsDisplayModeName">Mode: </h2>
+      <h2 id="statsDisplayOverallAccuracy">Overall Accuracy: </h2>
+      <h2 id="statsDisplayAverageScore">Average Score: </h2>
+      <h2 id="statsDisplayHighestScore">Highest Score: </h2>
+      <h2 id="statsDisplayCount">Total Games Played: </h2>
+    </div>
+  </div>
+
+  <!-- Authorisation menu -->
+  <div id="authPanel">
+    <div id="closeAuth" class="closeDiv">
+      <h1>Authorisation</h1>
+      <button id="closeAuthBtn" class="closeBtn">←</button>
+    </div>
+
+    <div id="authInputs">
+      <input id="authUser" placeholder="username" />
+      <input id="authPass" placeholder="password" type="password" />
+      <button id="registerBtn">Register</button>
+      <button id="loginBtn">Login</button>
+      <button id="logoutBtn" style="display:none">Logout</button>
+      <span id="authMsg"></span>
+    </div>
+  </div>
+
+  <!-- Profile  menu -->
+
+  <div id="profilePanel">
+    <div id="closeProfile" class="closeDiv">
+      <h1>Profile</h1>
+      <button id="closeProfileBtn" class="closeBtn">←</button>
+    </div>
+
+    <div id="profileContent">
+      <h2 id="profileUsername">Username: </h2>
+      <h2 id="profileAccuracy">Overall Accuracy: </h2>
+      <h2 id="profileScore">Average Score: </h2>
+      <h2 id="profileTotalScore">Total Score: </h2>
+      <h2 id="profileCount">Total Games Played: </h2>
+    </div>
+  </div>
+
+  <!-- Help menu -->
+
+  <div id="helpMenu"> 
+    <div id="closeHelp" class="closeDiv">
+      <h1> Information and Help </h1>
+      <button id="closeHelpBtn" class="closeBtn">←</button>
+    </div>
+
+    <div id="helpContent">
+      <h2>Welcome to the 3D Aim Trainer!</h2>
+      <p>This application is designed to help you improve your aiming skills through various training exercises and scenarios.</p>
+      
+      <h3>How to Use the Training Library:</h3>
+      <ul>
+        <li>Select a skill type (Accuracy, Flicking, Tracking) from the Training Library.</li>
+        <li>Choose a mode and difficulty level that suits your needs.</li>
+        <li>Click "Start" to begin the training session.</li>
+      </ul>
+
+      <h3>Pause Menu:</h3>
+      <ul>
+        <li>During a training session, press the "Pause" button to access the pause menu.</li>
+        <li>You can resume, reset, or return to the Training Library from here.</li>
+      </ul>
+
+      <h3>Settings:</h3>
+      <ul>
+        <li>Customize your crosshair appearance and user settings in the Settings menu.</li>
+        <li>Adjust sensitivity and field of view (FOV) to your preference.</li>
+      </ul>
+
+      <h3>Stats:</h3>
+      <ul>
+        <li>View your overall accuracy, total targets hit, shots fired, and time played in the Stats section.</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+  <!-- Training Library -->
+  <div id="library">
+    <div id="closeLibrary" class="closeDiv">
+      <h1> Training Library </h1>
+      <button id="closeLibraryBtn" class="closeBtn">←</button>
+    </div>
+    <div id="libraryOptions">
+      <div id="skillsOptions" class="libraryOption">
+        <h1>Skills</h1>
+
+        <div class="optionDiv">
+          <h2>Accuracy</h2>
+          <div id="accuracyModes" class="modeOptions">
+
+            <div id="staticMode" class="modeOption">
+              <h3>Static</h3>
+              <button id="staticEasy">Easy</button>
+              <button id="staticMedium">Medium</button>
+              <button id="staticHard">Hard</button>
+            </div>
+
+            <div id="dynamicMode" class="modeOption">
+              <h3>Dynamic</h3>
+              <button id="dynamicEasy">Easy</button>
+              <button id="dynamicMedium">Medium</button>
+              <button id="dynamicHard">Hard</button>
+            </div>
+
+            <div id="curvedDynamicMode" class="modeOption">
+              <h3>Curved Dynamic</h3>
+              <button id="curvedDynamicEasy">Easy</button>
+              <button id="curvedDynamicMedium">Medium</button>
+              <button id="curvedDynamicHard">Hard</button>
+            </div>
+
+          </div>
+        </div>  
+
+        <div class="optionDiv">
+          <h2>Flicking</h2>
+
+          <div id="flickingModes" class="modeOptions">
+
+            <div id="staticMode" class="modeOption">
+              <h3>Static</h3>
+              <button id="flickingEasy">Easy</button>
+              <button id="flickingMedium">Medium</button>
+              <button id="flickingHard">Hard</button>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="optionDiv">
+          <h2>Tracking</h2>
+
+          <div id="trackingModes" class="modeOptions">
+
+            <div id="singularTrackingMode" class="modeOption">
+              <h3>Singular Target</h3>
+              <button id="singularTrackingEasy">Easy</button>
+              <button id="singularTrackingMedium">Medium</button>
+              <button id="singularTrackingHard">Hard</button>
+            </div>
+
+            <div id="multipleTrackingMode" class="modeOption">
+              <h3>Multiple Target</h3>
+              <button id="multipleTrackingEasy">Easy</button>
+              <button id="multipleTrackingMedium">Medium</button>
+              <button id="multipleTrackingHard">Hard</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>   
+
+      <div id="scenarioOptions" class="libraryOption">
+        <h1>Scenarios</h1>
+
+        <div class="optionDiv">
+          <h2>Room Clearing</h2>
+          <button id="roomClearingBtn">Start</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pause Menu -->
+   <div id="pauseMenu">
+    <h1>Pause Menu</h1>
+    <button id="resumeBtn">Resume</button>
+    <button id="resetBtn">Reset</button>
+    <button id="backToLibraryBtn">Back to Library</button>
+    <button id="modeToSettingsBtn">Settings</button>
+   </div>
+
+
+  <!-- settings -->
+  <div id="settings">
+
+    <div id="closeSettings" class="closeDiv">
+      <h1> Settings </h1>
+      <button id="closeSettingsBtn" class="closeBtn">←</button>
+    </div>
+
+    <div id="settingsOptions">
+
+      <div id="crosshairCustomisation">
+
+        <div id="crosshairOptions">
+          <h1>Crosshair Customisation</h1>
+          <div id="crosshairColour">
+            <h2>Colour</h2>
+            <input type="color" id="crosshairColourInput" value="#ffffff">
+          </div>
+
+          <div id="crosshairSize">
+            <h2>Size</h2>
+            <input type="range" id="crosshairSizeInput" min="10" max="100" value="50">
+          </div>
+
+          <div id="crosshairPresets">
+            <h2>Presets</h2>
+            <button class="presetBtn" id="defaultPreset">+</button>
+            <button class="presetBtn" id="dotPreset">•</button>
+          </div>
+
+        </div>
+        
+        <div id="crosshairPreviewArea">
+          <h2>Preview</h2>
+          <div id="crosshairPreviewBox">
+            <div id="crosshairPreview">+</div>
+          </div>
+        </div>
+
+        <div id="instructions">
+          <h2>Instructions</h2>
+          <p>Use the colour picker to select a custom colour for your crosshair.
+              Use the size slider to adjust the size of your crosshair.
+              Click on a preset button to quickly set your crosshair to a predefined style.
+              Then click save to apply to the real crosshair.</p>
+        </div>
+
+        <div id="saveCrosshairOptions">
+          <button id="saveCrosshairBtn" class="saveBtn">Save</button>
+        </div>
+
+      </div>
+
+      <div id="userCustomisation">
+
+        <div id="userOptions">
+          <h1>User Settings</h1>
+
+          <div class="userOption">
+            <h2>Sensitivity</h2>
+            <input type="range" id="sensitivityInput" min="0.1" max="2" step="0.1" value="1">
+            <span id="sensitivityDisplay">1.0x</span>
+          </div>
+
+          <div class="userOption">
+            <h2>FOV</h2>
+            <input type="range" id="fovInput" min="30" max="120" step="1" value="75">
+            <span id="fovDisplay">75</span>
+          </div>
+
+        </div>
+        <div id="saveSensitivityOptions">
+          <button id="saveUserOptionsBtn" class="saveBtn">Save</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Skills Score Screen -->
+  <div id="score">
+    <div id="closeScore" class="closeDiv">
+      <h1> Stats </h1>
+      <button id="closeScoreBtn" class="closeBtn">←</button>
+    </div>
+
+    <div id="ScoreOptions">
+      <h2>Overall Accuracy: <span id="overallAccuracy">0%</span></h2>
+      <h2> <span id="totalHitH1">Total Targets Hit: </span> <span id="totalTargetsHit">0</span></h2>
+      <h2> <span id="totalShotH1">Total Shots Fired: </span> <span id="totalShotsFired">0</span></h2>
+      <h2>Total Time Played: <span id="totalTimePlayed">0s</span></h2>
+    </div>
+  </div>
+
+  <!-- Start round timer-->
+  <div id="startRoundTimer"> <span id="startRoundTimerText">5:00</span> </div>
+
+  <!-- During round timer-->
+  <div id="duringRoundTimer"> <span id="duringRoundTimerText">00:00</span> </div>
+
+  <!-- Script -->
+  <script type="module" src="/src/main.js"></script>
+  <div id="game-canvas"></div>
+  <div id="crosshair">+</div>
+</body>
+</html>
