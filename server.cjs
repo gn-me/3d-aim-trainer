@@ -22,7 +22,10 @@ if (!JWT_SECRET) {
 
 // Middleware
 app.use(express.json());
-app.use(require('cors')({ origin: true, credentials: true }));
+//app.use(require('cors')({ origin: true, credentials: true }));
+app.use(require('cors')({
+    origin: process.env.FRONTEND_URL
+}));
 
 // Ensure data folder exists and open DB
 const dataDir = path.join(__dirname, 'data');
@@ -124,6 +127,25 @@ app.post('/api/login', (req, res) => {
 // Post score (protected)
 app.post('/api/score', authMiddleware, (req, res) => {
   const { mode, score, accuracy } = req.body;
+
+  const allowedModes = ["staticEasy", "dynamicEasy", "staticMedium", "dynamicMedium", "staticHard", "dynamicHard",
+     "curvedDynamicEasy", "curvedDynamicMedium", "curvedDynamicHard", "flickingEasy", "flickingMedium", "flickingHard",
+    "singularTrackingEasy", "singularTrackingMedium", "singularTrackingHard", 
+     "multipleTrackingEasy", "multipleTrackingMedium", "multipleTrackingHard", "scenario"];
+
+  if (!(
+    allowedModes.includes(mode) &&
+    typeof score === "number" &&
+    Number.isFinite(score) &&
+    score >= 0 &&
+    typeof accuracy === "number" &&
+    Number.isFinite(accuracy) &&
+    accuracy >= 0 &&
+    accuracy <= 100
+  )) {
+    return res.status(400).json({ error: "Invalid score data" });
+  }
+
   db.run('INSERT INTO scores (user_id, mode, score, accuracy) VALUES (?,?,?,?)', [req.user.id, mode, score, accuracy], function(err) {
     if (err) return res.status(500).json({ error: 'DB error' });
     res.json({ ok: true, id: this.lastID });
